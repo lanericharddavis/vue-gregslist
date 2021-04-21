@@ -1,30 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <header>
+    <Navbar />
+  </header>
+  <!-- NOTE router-view allows the router to determine the component that should be injected -->
+  <main>
+    <router-view />
+    <CreateCarModal />
+  </main>
+  <footer>
+    <div class="bg-dark text-light text-center p-4">
+      Made with 💖 by CodeWorks
+    </div>
+  </footer>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import CreateCarModal from './components/CreateCarModal.vue'
+import Navbar from './components/Navbar'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    Navbar,
+    CreateCarModal
   }
 }
+</script>
+
+<style lang="scss">
+@import "./assets/scss/main.scss";
+
 </style>
