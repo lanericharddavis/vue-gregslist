@@ -1,6 +1,6 @@
 <template>
   <div class="car-details">
-    <h1>Hello From Car Details!</h1>
+    <h1>Car Details</h1>
     {{ route.params.id }}
     {{ state.car }}
     <button type="button" class="btn btn-danger" @click="deleteCar">
