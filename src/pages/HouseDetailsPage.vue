@@ -2,8 +2,8 @@
   <div class="house-details">
     <h1>House Details</h1>
     <div class="col-md-4 mb-3">
-      <div class="card shadow">
-        <img class="card-img-top" :src="house.imgUrl" alt="">
+      <div class="card shadow" v-if="state.house">
+        <img class="card-img-top" :src="state.house.imgUrl" alt="">
         <div class="card-body">
           <h4 class="card-title">
             <!-- {{ route.params.id }}
@@ -11,10 +11,10 @@
             ${{ house.price.toFixed(2) }}
           </h4>
           <p class="card-title">
-            bed:{{ house.bedrooms }} | bath:{{ house.bathrooms }} | levels:{{ house.levels }} | built:{{ house.year }}
+            bed:{{ state.house.bedrooms }} | bath:{{ state.house.bathrooms }} | levels:{{ state.house.levels }} | built:{{ state.house.year }}
           </p>
           <p class="card-text">
-            {{ house.description }}
+            {{ state.house.description }}
           </p>
         </div>
       </div>

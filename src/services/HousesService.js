@@ -1,8 +1,6 @@
 import { AppState } from '../AppState.js'
 import router from '../router/index.js'
-// import router from '../router/index.js'
 // REVIEW router gets imported directly from the router file
-// import router from '../router/index.js' (NOT UNTIL CREATEHOUSE)
 import { api } from './AxiosService.js'
 
 class HousesService {

@@ -1,8 +1,11 @@
 <template>
   <div class="car-details">
     <h1>Car Details</h1>
-    {{ route.params.id }}
-    {{ state.car }}
+    <!-- {{ route.params.id }} -->
+    <!-- {{ state.car }} -->
+    <div v-if="state.car">
+      <img class="card-img-top" :src="state.car.imgUrl" alt="">
+    </div>
     <button type="button" class="btn btn-danger" @click="deleteCar">
       Delete
     </button>
@@ -17,6 +20,12 @@ import { carsService } from '../services/CarsService'
 
 export default {
   name: 'CarDetails',
+  props: {
+    car: {
+      type: Object,
+      required: true
+    }
+  },
   setup() {
     // ROUTE is the current page info
     const route = useRoute()
